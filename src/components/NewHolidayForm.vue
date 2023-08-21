@@ -32,11 +32,11 @@ export default {
                     endDate: this.endDate
                 });
             } else {
-                window.alert("Fill in all entries")
+                window.alert("Fill in all entries");
             }
         },
         closeForm() {
-            this.$emit("closeForm")
+            this.$emit("closeForm");
         }
     }
 }
