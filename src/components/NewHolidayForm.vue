@@ -3,10 +3,13 @@
         <form>
             <label for="title">Title</label>
             <input id="title" type="text" v-model="holidayTitle"/>
+            
             <label for="start-date">Start date</label>
             <input id="start-date" type="date" v-model="startDate"/>
+            
             <label for="end-date">End date</label>
             <input id="end-date" type="date" v-model="endDate"/>
+            
             <button type="button" @click.prevent="submitForm">Submit</button>
             <button type="button" @click.prevent="closeForm">Cancel</button>
         </form>

@@ -4,8 +4,8 @@
         <ul>
             <li v-for="(newHoliday, index) in newHolidays" :key="index">
                 <h3>{{ newHoliday.title }}</h3>
-                <span>{{ newHoliday.startDate }}</span>
-                <span>{{ newHoliday.endDate }}</span>
+                <div>{{ newHoliday.startDate }}</div>
+                <div>{{ newHoliday.endDate }}</div>
             </li>
         </ul>
     </div>

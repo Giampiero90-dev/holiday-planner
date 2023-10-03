@@ -21,7 +21,7 @@ export default {
         return {
             formIsVisible: false,
             newSubmittedHoliday: [],
-       }
+        }
     },
     methods: {
         showForm() {
@@ -29,7 +29,7 @@ export default {
         },
         storeData(data) {
             console.log(data);
-            this.newSubmittedHoliday.push(data);
+            this.newSubmittedHoliday.unshift(data);
         }
     }
 }
