@@ -1,11 +1,12 @@
 <template>
     <div>
         <h2>Holidays Overview</h2>
+        <router-link to="/create">+ Add a new holiday</router-link>
         <ul>
-            <li v-for="(newHoliday, index) in newHolidays" :key="index">
-                <h3>{{ newHoliday.title }}</h3>
-                <div>{{ newHoliday.startDate }}</div>
-                <div>{{ newHoliday.endDate }}</div>
+            <li v-for="(holiday, index) in holidays" :key="index">
+                <h3>{{ holiday.title }}</h3>
+                <div>{{ holiday.startDate }}</div>
+                <div>{{ holiday.endDate }}</div>
             </li>
         </ul>
     </div>
@@ -20,7 +21,7 @@ export default {
         }
     },
     props: {
-        newHolidays: {
+        holidays: {
             type: Array,
             default: null,
             required: false,

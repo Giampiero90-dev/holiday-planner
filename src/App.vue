@@ -1,12 +1,33 @@
 <template>
-  <HomePage/>
+    <div>
+        <h1>BookerZzz Holiday Planner</h1>
+        <router-view
+            @sumbmittedNewHoliday="storeData($event)"></router-view>
+    </div>
 </template>
 
 <script>
-import HomePage from './Pages/Home.vue'
+import HolidaysList from './components/HolidaysList.vue'
+
 export default {
-    components: {HomePage}
+    name: 'HomePage',
+    components: {
+        HolidaysList,
+    },
+    data() {
+        return {
+            formIsVisible: false,
+            newSubmittedHoliday: [],
+        }
+    },
+    methods: {
+        storeData(data) {
+            console.log(data);
+            this.newSubmittedHoliday.unshift(data);
+        }
+    }
 }
+
 </script>
 
 <style scoped>

@@ -34,12 +34,13 @@ export default {
                     startDate: this.startDate,
                     endDate: this.endDate
                 });
+                this.$router.replace({ path: '/'});
             } else {
                 window.alert("Fill in all entries");
             }
         },
         closeForm() {
-            this.$emit("closeForm");
+            this.$router.replace({ path: '/'});
         }
     }
 }
