@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { useHolidayStore } from '../stores/holidayStore';
+
 export default {
     name: 'NewHolidayForm',
     data() {
@@ -24,16 +26,18 @@ export default {
             holidayTitle: null,
             startDate: null,
             endDate: null,
+            store: useHolidayStore(),
         }
     },
     methods: {
         submitForm() {
             if(this.holidayTitle && this.startDate && this.endDate) {
-                this.$emit("sumbmittedNewHoliday", {
+                this.store.create({
                     title: this.holidayTitle,
                     startDate: this.startDate,
                     endDate: this.endDate
-                });
+                    }
+                )
                 this.$router.replace({ path: '/'});
             } else {
                 window.alert("Fill in all entries");
